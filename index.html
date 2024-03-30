@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="background-image: url(back.jpg); background-repeat: no-repeat; background-size: cover;">
+    <div class="guess">
+    <h1 style="background-color: aliceblue; width: 450px;">Guess the number from 1 to 10</h1><br>
+    <div class="input1">
+     <input id="guessnumber" style="height: 40px; font-size: large;">
+     <button style="height: 44px; font-size: large;" onclick="check()" >Check</button>
+     <h4 style="background-color: aliceblue; width: 180px;margin-left: 8%; font-size: larger;"id="result" >You are Wrong/right</h4>
+     <h4 style="background-color: aliceblue; width: 75px; margin-left: 15%; font-size: larger;"id="score">Score:10</h4>
+    </div>
+    </div>
+    <script>
+           var guessnumber=document.getElementById("guessnumber")
+           var result=document.getElementById("result")
+           var score=document.getElementById("score")
+           var Totalscore=10
+           
+           var randomnumber= Math.floor(Math.random()*10)+1
+           console.log(randomnumber)
+           function check(){
+            var enterednumber=guessnumber.value
+                if(enterednumber == randomnumber){
+                    result.textContent="You are Right"
+                    alert("You Won....!!")
+                }
+                else{
+                    Totalscore=Totalscore-1
+                    result.textContent="You are Wrong"
+                    score.textContent="Score"+Totalscore
+
+                }
+           }
+           
+    </script>
+</body>
+</html>
